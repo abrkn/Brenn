@@ -1,0 +1,7 @@
+﻿<m:People
+	xmlns:m="clr-namespace:Opuno.Brenn.WindowsPhone.ViewModels"
+	xmlns:System="clr-namespace:System;assembly=mscorlib"
+>
+	<m:PersonViewModel DisplayName="Andreas" Key="1" />
+	<m:PersonViewModel DisplayName="Mæleng" Key="2" />
+</m:People>

@@ -1,0 +1,59 @@
+﻿@model Opuno.Brenn.Website.ViewModels.ExpenseViewModel
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Expense</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Expense.Amount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.Expense.Amount)
+            @Html.ValidationMessageFor(m => m.Expense.Amount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Expense.DisplayName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.Expense.DisplayName)
+            @Html.ValidationMessageFor(m => m.Expense.DisplayName)
+        </div>
+
+        @DateTime.Now
+
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Expense.PaidByPersonId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(m => m.Expense.PaidByPersonId, new SelectList(
+                Model.PossiblePayers,
+                "PersonId",
+                "DisplayName",
+       (Model.Expense == null || Model.Expense.PaidBy == null) ? default(int?) : Model.Expense.PaidByPersonId))
+            @Html.ValidationMessageFor(m => m.Expense.PaidBy)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Expense.RecordDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.Expense.RecordDate)
+            @Html.ValidationMessageFor(m => m.Expense.RecordDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Expense.UsedBy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.PossibleUsers, "PeopleCheckListBox")
+            @Html.ValidationMessageFor(m => m.Expense.UsedBy)
+        </div>
+
+        <p>
+            <input type="submit" value="@ViewBag.SubmitButtonText" />
+        </p>
+    </fieldset>
+}

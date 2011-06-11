@@ -1,0 +1,42 @@
+﻿<m:RootViewModel
+	xmlns:m="clr-namespace:Opuno.Brenn.WindowsPhone.ViewModels"
+	xmlns:System="clr-namespace:System;assembly=mscorlib">
+	<m:RootViewModel.Trips>
+		<m:TripViewModel DisplayName="Andreas/NM" Key="1">
+		</m:TripViewModel>
+		<m:TripViewModel DisplayName="Peter/Andy" Key="1">
+		</m:TripViewModel>
+		<m:TripViewModel DisplayName="Argentina 2011" Key="1">
+		</m:TripViewModel>
+		<m:TripViewModel DisplayName="Henrik/Andreas/NM" Key="1">
+		</m:TripViewModel>
+		<m:TripViewModel DisplayName="Andreas/Andreas" Key="1">
+			<m:TripViewModel.Expenses>
+				<m:ExpenseViewModel DisplayName="Popolare" Key="2" RecordDate="2011-05-27 23:15:00" Amount="733.00">
+					<m:ExpenseViewModel.Sender>
+						<m:PersonViewModel DisplayName="Mæleng" Key="2" />
+					</m:ExpenseViewModel.Sender>
+					<m:ExpenseViewModel.Receivers>
+						<m:PersonViewModel DisplayName="Andreas" Key="1" />
+					</m:ExpenseViewModel.Receivers>
+				</m:ExpenseViewModel>
+				<m:ExpenseViewModel DisplayName="Ukjent bar" Key="2" RecordDate="2011-05-28 01:00:00" Amount="282.00">
+					<m:ExpenseViewModel.Sender>
+						<m:PersonViewModel DisplayName="Mæleng" Key="2" />
+					</m:ExpenseViewModel.Sender>
+					<m:ExpenseViewModel.Receivers>
+						<m:PersonViewModel DisplayName="Andreas" Key="1" />
+					</m:ExpenseViewModel.Receivers>
+				</m:ExpenseViewModel>
+				<m:ExpenseViewModel DisplayName="Villa" Key="4" RecordDate="2011-05-28 02:00:00" Amount="454.00">
+					<m:ExpenseViewModel.Sender>
+						<m:PersonViewModel DisplayName="Mæleng" Key="2" />
+					</m:ExpenseViewModel.Sender>
+					<m:ExpenseViewModel.Receivers>
+						<m:PersonViewModel DisplayName="Andreas" Key="1" />
+					</m:ExpenseViewModel.Receivers>
+				</m:ExpenseViewModel>
+			</m:TripViewModel.Expenses>
+		</m:TripViewModel>
+	</m:RootViewModel.Trips>
+</m:RootViewModel>

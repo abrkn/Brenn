@@ -1,0 +1,13 @@
+﻿@model Opuno.Brenn.Models.Collection
+
+@{
+    ViewBag.Title = Model.DisplayName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.DisplayName</h2>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CollectionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

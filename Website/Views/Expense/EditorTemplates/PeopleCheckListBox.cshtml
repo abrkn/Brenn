@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Tuple<Opuno.Brenn.Models.Person, bool>>
+
+<ul>
+@foreach (var kvp in Model)
+{
+    <li>
+        @Html.CheckBoxFor(x => kvp.Item2)
+        @Html.LabelFor(x => kvp.Item1.PersonId, kvp.Item1.DisplayName)
+        @Html.HiddenFor(x => kvp.Item1.PersonId)
+    </li>
+}
+</ul>

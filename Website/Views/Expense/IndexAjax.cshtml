@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "IndexAjax";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" src="/Scripts/Expense.js"></script>
+<script type="text/javascript">
+    var model = @Html.Raw(new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(ViewBag.Model));
+</script>
+
+<table id="expenses">
+    <tr>
+        <th>Amount</th>
+        <th>What</th>
+        <th>When</th>
+        <th>Paid by</th>
+        <th>Used by</th>
+        <th></th>
+    </tr>
+</table>

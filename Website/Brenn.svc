@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Opuno.Brenn.Website.Brenn" CodeBehind="Brenn.svc.cs" %>

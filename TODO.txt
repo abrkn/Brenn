@@ -1,0 +1,146 @@
+Register domain (whopaidfor.com or something shorter)
+Create blog on domain
+Move code and TODOs to CodePlex
+Look for alpha testers
+
+Deletion:
+    - Set IsDeleted = True
+	- Only use views when selecting from database, such as ActiveTrip, ActiveExpense, etc.
+	- Need to be careful when users send updates/creates so they do not have FKs pointing at deleted objects.
+	- When deleting a...:
+		* Trip:
+			- Each Expense is marked as deleted
+		* Person:
+			- The Person can not be the sender or receiver of any expense and is removed from those roles.
+			  This could render an Expense-object without a ValueForPerson
+		* Expense:
+			- No effects.
+	- Modify the sync updates to support this. Example update request item is "Delete = True" with the entity object set to null.
+	- Use stored procedures.
+
+WP7:
+	* Consider making record time less visible and sticking to "Who paid, What, How much, For who" (three is always nice)
+	* Deleting trips
+	* Deleting expenses
+	* Adding people (maybe "New..." option in picklist)
+
+Who has the right to change the name of a Person? Each Person should have a list of trips in which it is involved.
+	Anyone on that trip can change its name (properties) unless the Person object is connected to an Account (later)
+
+Changelog:
+	Before full history is implemented, there should be a ChangeLog table which goes like:
+
+		TableName	EntityId	Description
+		----------------------------------------------------------------------------------------------------
+		Trip		1			Trip was created by Andreas
+		Expense		1			Expense was created in trip 'Argentina 2011' with sender X and users Y
+		Expense		1			Peter was added as user of expense
+
+
+		
+Concurrency checks on the client:
+	- Because there is no history (at the moment):
+		* Edit, Edit: Second edit overwrites first edit
+		* Create, Edit: Edit overwrites information in create
+		* Create, Delete: Entity is not created
+		* Edit, Delete: Entity is not edited
+
+		!!! What happens with this update:
+			People: 1 (Create)Andy, 2 (Create)Peter, 4(Delete)Andy (Andy is now deleted)
+			Expenses: 3 (Create)Expense paid by Andy
+
+Error handling on WP7:
+  - Might not be able to send right away. Queue & async.
+
+Tombstoning on WP7:
+	- When the user does not "leave" the app, tombstone Model + ViewModels. Else, tombstone everything.
+
+Threading issues on WP7:
+	Are there any? Is Dispatcher.BeginInvoke on UI thread enough?
+
+Web version can be one in Silverlight and one very basic MVC (shit to use, does basics)
+	- The latter version will only be for weird phones anyway. WAP :-(
+	
+Accounts:
+	- Implement Account class:
+		AccountId
+		ChangeSetN
+		RowId
+
+Authentication:
+	- Add a method to log in, which returns a session id
+	- Log out method (deletes session)
+	- Each method call takes a session id. Using transport security could be a problem on different devices.
+		If there is a tunnel that WCF can use or pipeline item, then great.
+
+Authorization:
+	- Add property to Trip which is called TripMembers (List<Account>). Every member has read/write access
+	- A person can only view/edit/delete trips they have access to
+
+Ready for users:
+	- Usernames (email)
+	- Passwords (hashing, salting, etc.)
+	- Login pages on clients (and log out?)
+
+iPhone development:
+	- See if anything can be re-used with MonoTouch
+
+Facebook integration:
+	- Separate process for each device
+	- If profile pictures can be hotlinked, then good. Else, download and store.
+	- Add Facebook friends as Person
+
+Account merging (may need to come later as it requires a lot of coding):
+	- Classic scenario:
+		- PersonA(registered) makes trip with one expense. PersonA adds PersonB(Person) to expense.
+		  PersonA chooses to connect PersonB with PersonB's FB. PersonB receives notification.
+		  PersonB declines: ?
+		  PersonB does not answer: ?
+		  PersonB accepts:
+			- PersonB already has an account on Brenn. He will now need to absorb this Person, by deleting it and putting himself in its place.
+	- User has two accounts (one FB, one not FB). Need to have option on which one to keep. Other one is replaced.
+
+
+Android development: (may want to move this down unless using MonoDroid)
+
+Support for attaching pictures to Expense objects:
+
+Support for adding GPS coordinates to Expense objects:
+
+Support for currencies:
+	- Currency for: Account, Trip, Expense. No "inheritance", just when creating objects.
+	- Need historic currency numbers for convertions
+
+Automatic suggestions for currency based on location:
+	* Mapping will go like this: GPS/IP address --> Country --> Currency
+	* Each new Expense should always use the Trip default?
+
+Trip settling helper (UI):
+	* Suggests who should pay who how much.
+	* Integration with PayPal, MoneyBookers, bla bla, would be nice.
+
+Push notifications. The phones should have pretty much the same stuff for this:
+	* IIRC, the vendor contacts our HTTP and requests data which is transferred back to the client.
+
+Error reporting:
+	Send stack traces, etc. to sentral server for diagnosis
+
+Show expense on map (all devices)
+
+For shareware, the app can have max X expenses per user, either as paid by or receiver. Could be very annoying.
+
+Storing the entire history for entities. Not sure how that's done.
+
+Social stuff:
+	Email notifications to users when trip changes
+	RSS feed of changes to trip
+	Facebook app (embedded Silverlight?)
+	
+
+
+
+
+
+
+
+

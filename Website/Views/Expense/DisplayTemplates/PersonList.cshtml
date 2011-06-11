@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Opuno.Brenn.Models.Person>
+
+<style type="text/css">
+ul.personList li {
+ margin: 0px;
+ padding: 0px;
+ list-style: none;
+ margin: auto 5px auto 5px;
+ white-space: nowrap;
+ display: inline-block;
+ /*width: 60px;*/ /* 'X' */
+ /*border: solid 1px #ccc;*/
+}
+</style>
+
+<ul class="personList" style="padding:0">
+@foreach (var person in Model)
+{
+    <li>@person.DisplayName</li>
+}
+</ul>

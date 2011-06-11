@@ -1,0 +1,58 @@
+﻿<script id="expenseViewTemplate" type="text/x-jquery-tmpl">
+    {{if !$item.editing}}
+        <td>${Amount}</td>
+        <td>${DisplayName}</td>
+        <td>${RecordDate}</td>
+        <td>${PaidBy.DisplayName}</td>
+        <td>
+            <ul>
+            {{each model.People}}
+                {{if $item.getIsUsedBy($item, $value.PersonId)}}
+                    <li>${$value.DisplayName}</li>
+                {{/if}}
+            {{/each}}
+            </ul>
+        </td>
+        <td><a href="#" class="editExpense">Edit</td>
+    {{else}}
+        <td>
+            <input type="textbox" value="${Amount}" class="currency" name="Amount" />
+        </td>
+        <td>
+            <input type="textbox" value="${DisplayName}" name="DisplayName" />
+        </td>
+        <td>
+            <input type="textbox" value="${RecordDate}" name="RecordDate" />
+        </td>
+        <td>
+            <select>
+                {{each model.People}}
+                    <option value="${$value.PersonId}"
+                    
+                    {{if $value.PersonId == $item.data.PaidByPersonId}}
+                        selected="selected"
+                    {{/if}}
+                    
+                    >${$value.DisplayName}</option>
+                {{/each}}
+            </select>
+        </td>
+        <td>
+            {{each model.People}}
+                <input type="checkbox"
+                {{if $item.getIsUsedBy($item, $value.PersonId)}}
+                    checked="checked"
+                {{/if}}
+                >${$value.DisplayName}</input>
+            {{/each}}
+        </td>
+        <td><a href="#" class="saveExpense">Save</a> |
+        <a href="#" class="cancelEditExpense">Cancel</a></td>
+    {{/if}}
+</script>
+
+<script id="expenseRowTemplate" type="text/x-jquery-tmpl">
+    <tr>
+        {{tmpl($item.data, $item) "#expenseViewTemplate"}}
+    </tr>
+</script>

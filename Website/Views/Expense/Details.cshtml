@@ -1,0 +1,30 @@
+﻿@model Opuno.Brenn.Models.Expense
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Expense</legend>
+
+    <div class="display-label">Amount</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Amount)
+    </div>
+
+    <div class="display-label">DisplayName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DisplayName)
+    </div>
+
+    <div class="display-label">RecordDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RecordDate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ExpenseId }) |
+    @Html.ActionLink("Back to List", "Index", new { Model.CollectionId })
+</p>

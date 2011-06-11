@@ -1,0 +1,99 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{61E36462-2927-408F-BA49-D8B3377A9674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{4B4FF4F3-41C0-42FD-B012-761789440A4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website.Tests", "Website.Tests\Website.Tests.csproj", "{3899B90F-B5DD-49E7-A486-36F0DF062F47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsPhone", "WindowsPhone\WindowsPhone.csproj", "{825A2888-4214-4C22-9F77-50C3B7192526}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4B4FF4F3-41C0-42FD-B012-761789440A4E} = {4B4FF4F3-41C0-42FD-B012-761789440A4E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{B48252C1-CF70-4EE7-9B9D-68025B0F7E36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Tests", "Core.Tests\Core.Tests.csproj", "{EE266DC3-50F4-4A2D-A115-E1705BB37D3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{64A02186-3B59-4C5A-AB7B-E623C7FFF1D6}"
+	ProjectSection(SolutionItems) = preProject
+		Brenn.vsmdi = Brenn.vsmdi
+		Local.testsettings = Local.testsettings
+		TODO.txt = TODO.txt
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website.Mvc", "Website.Mvc\Website.Mvc.csproj", "{2CE7AB6F-D64A-4C0E-98EC-81F3DCD02F01}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs01.tfsmadeeasy.com/tfs/opunocollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Core\\Core.csproj
+		SccProjectName1 = Core
+		SccLocalPath1 = Core
+		SccProjectUniqueName2 = Website\\Website.csproj
+		SccProjectName2 = Website
+		SccLocalPath2 = Website
+		SccProjectUniqueName3 = Website.Tests\\Website.Tests.csproj
+		SccProjectName3 = Website.Tests
+		SccLocalPath3 = Website.Tests
+		SccProjectUniqueName4 = WindowsPhone\\WindowsPhone.csproj
+		SccProjectName4 = WindowsPhone
+		SccLocalPath4 = WindowsPhone
+		SccProjectUniqueName5 = DataAccess\\DataAccess.csproj
+		SccProjectName5 = DataAccess
+		SccLocalPath5 = DataAccess
+		SccProjectUniqueName6 = Core.Tests\\Core.Tests.csproj
+		SccProjectName6 = Core.Tests
+		SccLocalPath6 = Core.Tests
+		SccProjectUniqueName7 = Website.Mvc\\Website.Mvc.csproj
+		SccProjectName7 = Website.Mvc
+		SccLocalPath7 = Website.Mvc
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Brenn.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61E36462-2927-408F-BA49-D8B3377A9674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61E36462-2927-408F-BA49-D8B3377A9674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61E36462-2927-408F-BA49-D8B3377A9674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61E36462-2927-408F-BA49-D8B3377A9674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B4FF4F3-41C0-42FD-B012-761789440A4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B4FF4F3-41C0-42FD-B012-761789440A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B4FF4F3-41C0-42FD-B012-761789440A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B4FF4F3-41C0-42FD-B012-761789440A4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3899B90F-B5DD-49E7-A486-36F0DF062F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3899B90F-B5DD-49E7-A486-36F0DF062F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3899B90F-B5DD-49E7-A486-36F0DF062F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3899B90F-B5DD-49E7-A486-36F0DF062F47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{825A2888-4214-4C22-9F77-50C3B7192526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{825A2888-4214-4C22-9F77-50C3B7192526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{825A2888-4214-4C22-9F77-50C3B7192526}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{825A2888-4214-4C22-9F77-50C3B7192526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{825A2888-4214-4C22-9F77-50C3B7192526}.Release|Any CPU.Build.0 = Release|Any CPU
+		{825A2888-4214-4C22-9F77-50C3B7192526}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B48252C1-CF70-4EE7-9B9D-68025B0F7E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B48252C1-CF70-4EE7-9B9D-68025B0F7E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B48252C1-CF70-4EE7-9B9D-68025B0F7E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B48252C1-CF70-4EE7-9B9D-68025B0F7E36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE266DC3-50F4-4A2D-A115-E1705BB37D3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE266DC3-50F4-4A2D-A115-E1705BB37D3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE266DC3-50F4-4A2D-A115-E1705BB37D3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE266DC3-50F4-4A2D-A115-E1705BB37D3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CE7AB6F-D64A-4C0E-98EC-81F3DCD02F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CE7AB6F-D64A-4C0E-98EC-81F3DCD02F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CE7AB6F-D64A-4C0E-98EC-81F3DCD02F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CE7AB6F-D64A-4C0E-98EC-81F3DCD02F01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

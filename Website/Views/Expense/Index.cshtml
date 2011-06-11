@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Opuno.Brenn.Models.Expense>
+
+@{
+    ViewBag.Title = ViewBag.Collection.DisplayName + " - " + "SiteName";
+}
+
+<h2>@ViewBag.Collection.DisplayName</h2>
+
+<h3>Expenses</h3>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { collectionId = ViewBag.CollectionId })
+</p>
+
+<table id="expenses">
+    <tr>
+        <th>
+            Amount
+        </th>
+        <th>
+            DisplayName
+        </th>
+        <th>
+            RecordDate
+        </th>
+        <th>
+            Paid by
+        </th>
+        <th>
+            Used by
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DisplayName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecordDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaidBy.DisplayName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsedBy, "PersonList")
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ExpenseId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ExpenseId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ExpenseId })
+        </td>
+    </tr>
+}
+
+</table>
+
+<h3>Standings</h3>
+
+<div>
+    @{ 
+        var collection = (Opuno.Brenn.Models.Collection)ViewBag.Collection; 
+        var summary = collection.ValuePerPerson;
+        }
+
+    @Html.Partial("_PersonValueSummary", summary)
+</div>

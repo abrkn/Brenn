@@ -1,0 +1,33 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	xmlns:Opuno_Brenn_WindowsPhone_Converters="clr-namespace:Opuno.Brenn.WindowsPhone.Converters" 
+	x:Class="Opuno.Brenn.WindowsPhone.Templates.ExpenseTemplate">
+	<Opuno_Brenn_WindowsPhone_Converters:UsedByTextConverter x:Key="UsedByTextConverter"/>
+	<Opuno_Brenn_WindowsPhone_Converters:CurrencyConverter x:Key="CurrencyConverter"/>
+    <DataTemplate x:Key="ExpenseTemplate">
+        <StackPanel Orientation="Vertical" Height="100">
+            <TextBlock Text="{Binding DisplayName, Mode=OneWay}"
+                                        Style="{StaticResource PhoneTextLargeStyle}"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="PaidByDisplayName" 
+                                            Text="{Binding Sender.DisplayName, Mode=OneWay}"
+                                            Margin="20,0,0,0"
+                                            Style="{StaticResource PhoneTextSmallStyle}"
+                                            TextWrapping="Wrap"/>
+                <TextBlock Text=" paid " Style="{StaticResource PhoneTextSmallStyle}" Margin="0,0,0,0" />
+                <TextBlock x:Name="Amount" 
+                                            Text="{Binding Amount, Converter={StaticResource CurrencyConverter}}"
+                                            Margin="0,0,0,0"
+                                            Style="{StaticResource PhoneTextSmallStyle}"
+                                            TextWrapping="Wrap"/>
+                <TextBlock Text=" for " Style="{StaticResource PhoneTextSmallStyle}" Margin="0,0,0,0" />
+                <TextBlock x:Name="UsedBy" 
+                                            Text="{Binding Receivers, Converter={StaticResource UsedByTextConverter}}"
+                                            Margin="0,0,0,0"
+                                            Style="{StaticResource PhoneTextSmallStyle}"
+                                            TextWrapping="Wrap"/>
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>

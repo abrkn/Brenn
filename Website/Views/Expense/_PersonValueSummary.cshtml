@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Tuple<Opuno.Brenn.Models.Person, decimal>>
+
+<table>
+    <tr>
+        <th>Who</th>
+        <th>Standing</th>
+    </tr>
+
+        @foreach (var personValue in Model)
+        {
+            <tr>
+                <td>@personValue.Item1.DisplayName</td>
+                <td>@string.Format("{0:c}", personValue.Item2)</td>
+            </tr>
+        }
+</table>

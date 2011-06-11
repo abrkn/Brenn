@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{825A2888-4214-4C22-9F77-50C3B7192526}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Opuno.Brenn.WindowsPhone</RootNamespace>
+    <AssemblyName>Opuno.Brenn.WindowsPhone</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>WindowsPhone.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Opuno.Brenn.WindowsPhone.Views.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.30422.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="NavigationListControl">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\temp\NavigationListControl\NavigationListControl\Bin\Debug\NavigationListControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.ComponentModel.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Servicemodel.Web" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Core\IDataErrorInfo.cs">
+      <Link>IDataErrorInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\Models\Expense.cs">
+      <Link>Models\Expense.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\Models\Person.cs">
+      <Link>Models\Person.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\Models\Trip.cs">
+      <Link>Models\Trip.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\Sync\ExpenseUpdate.cs">
+      <Link>Sync\ExpenseUpdate.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\Sync\PersonUpdate.cs">
+      <Link>Sync\PersonUpdate.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\Sync\SyncRequest.cs">
+      <Link>Sync\SyncRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\Sync\SyncResponse.cs">
+      <Link>Sync\SyncResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\Sync\TripUpdate.cs">
+      <Link>Sync\TripUpdate.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\Sync\UpdateError.cs">
+      <Link>Sync\UpdateError.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\Sync\UpdateResult.cs">
+      <Link>Sync\UpdateResult.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\ViewModels\ExpenseViewModel.cs">
+      <Link>ViewModels\ExpenseViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\ViewModels\PersonViewModel.cs">
+      <Link>ViewModels\PersonViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\ViewModels\RootViewModel.cs">
+      <Link>ViewModels\RootViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\ViewModels\TripViewModel.cs">
+      <Link>ViewModels\TripViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\ViewModels\ViewModel.cs">
+      <Link>ViewModels\ViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\ViewModels\ViewModelOfTModel.cs">
+      <Link>ViewModels\ViewModelOfTModel.cs</Link>
+    </Compile>
+    <Compile Include="DataAccess\RepositoryItemEventArgs.cs" />
+    <Compile Include="Helpers\CollectionSync.cs" />
+    <Compile Include="ModelExtensions\Expense.cs" />
+    <Compile Include="ModelExtensions\IClientModel.cs" />
+    <Compile Include="ModelExtensions\Person.cs" />
+    <Compile Include="ModelExtensions\Trip.cs" />
+    <Compile Include="UserControls\TripViewExpenses.xaml.cs">
+      <DependentUpon>TripViewExpenses.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BindingUtil.cs" />
+    <Compile Include="Converters\UsedByTextConverter.cs" />
+    <Compile Include="Converters\ExpenseSummaryConverter.cs" />
+    <Compile Include="Converters\CurrencyConverter.cs" />
+    <Compile Include="Converters\IMultiValueConverter.cs" />
+    <Compile Include="Converters\MultiBinding.cs" />
+    <Compile Include="Converters\MultiBindings.cs" />
+    <Compile Include="DataAccess\Repository.cs" />
+    <Compile Include="Helpers\SyncHelper.cs" />
+    <Compile Include="Views\ExpenseView.xaml.cs">
+      <DependentUpon>ExpenseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\JsonHelper.cs" />
+    <Compile Include="Helpers\ServiceHelper.cs" />
+    <Compile Include="Views\TripView.xaml.cs">
+      <DependentUpon>TripView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RootView.xaml.cs">
+      <DependentUpon>RootView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Views\App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <DesignDataWithDesignTimeCreatableTypes Include="SampleData\TripViewModelSampleData.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </DesignDataWithDesignTimeCreatableTypes>
+    <DesignDataWithDesignTimeCreatableTypes Include="SampleData\ExpenseViewModelSampleData.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </DesignDataWithDesignTimeCreatableTypes>
+    <DesignDataWithDesignTimeCreatableTypes Include="SampleData\KnownPeopleViewModelSampleData.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </DesignDataWithDesignTimeCreatableTypes>
+    <Page Include="UserControls\TripViewExpenses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExpenseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TripView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RootView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\TripViewExpenseTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+    <Content Include="icons\appbar.add.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\appbar.add.rest.png" />
+    <Resource Include="Images\appbar.feature.settings.rest.png" />
+    <Content Include="ServiceReferences.ClientConfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <DesignDataWithDesignTimeCreatableTypes Include="SampleData\RootViewModelSampleData.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </DesignDataWithDesignTimeCreatableTypes>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties ProjectLinkReference="61e36462-2927-408f-ba49-d8b3377a9674" ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
